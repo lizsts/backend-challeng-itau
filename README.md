@@ -12,7 +12,7 @@ Este projeto apresenta uma API REST que tem como objetivo construir o cálculo d
 
 ## Instalando e Executando a Aplicação:
 
-Clone o projeto no repositório: Faça checkout para branch Desenv:
+Clone o projeto no repositório: 
 
 ```bash
 git clone https://github.com/lizsts/backend-challenge-itau.git
@@ -37,9 +37,6 @@ através do [link](https://jdk.java.net/archive/).
 
 Após o start da aplicação, você pode acessar a interface [Swagger UI](http://localhost:8082/swagger-ui.html) e utilizar no método POST o seguinte body: 
 
-As Categorias podem ser: "VIDA", "AUTO", "VIAGEM", "RESIDENCIAL", "PATRIMONIAL"
-
-
 ```json
 {
     "nome": "Seguro de Vida Individual",
@@ -47,6 +44,8 @@ As Categorias podem ser: "VIDA", "AUTO", "VIAGEM", "RESIDENCIAL", "PATRIMONIAL"
     "preco_base": 100.00
 }
 ```
+As Categorias podem ser: "VIDA", "AUTO", "VIAGEM", "RESIDENCIAL", "PATRIMONIAL".
+
 OBS: Caso digite uma categoria diferente das citadas acima, a API lança uma exceção (InvalidCategoryException). 
 
 
@@ -65,10 +64,10 @@ Pode ser acessado o [H2 Console](http://localhost:8082/h2-console), utilizando a
 
 ### Observabilidade: 
 Com Spring Boot Actuator, podem ser acessados os dados através dos endpoints: 
-* [Healt](http://localhost:8082/management/health)
+* [Health](http://localhost:8082/management/health)
 * [Metrics](http://localhost:8082/management/metrics)
 
-OBS: o Actuator garante suporte para integração com interfaces de métricas como DynaTrace, Grafana, entre outras. 
+OBS: O Actuator garante suporte para integração com interfaces de métricas como DynaTrace, Grafana, entre outras. 
 
 ### Code Coverage:
 
