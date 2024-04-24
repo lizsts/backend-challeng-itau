@@ -39,9 +39,9 @@ Após o start da aplicação, você pode acessar a interface [Swagger UI](http:/
 
 ```json
 {
-    "nome": "Seguro de Vida Individual",
-    "categoria": "VIDA",
-    "preco_base": 100.00
+    "name": "Seguro de Vida Individual",
+    "category": "VIDA",
+    "basePrice": 100.00
 }
 ```
 As Categorias podem ser: "VIDA", "AUTO", "VIAGEM", "RESIDENCIAL", "PATRIMONIAL".
