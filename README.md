@@ -93,7 +93,7 @@ Uma dica para a evolução da solução: O Command Patterns (createCommandProduc
 Criei um service para lidar com operações de acesso a repository e persistência, posto que os meus useCases não poderiam acessar as camadas de infrastructure diretamente sem prejudicar o modelo de uma arquitetura limpa. Para isso, deixo disponível para minha camada core uma interface, garantindo a separação de responsabilidades, a manutenibilidade e flexibilidade da minha aplicação.
 
 ## Considerações Finais: 
-Esta solução apresenta ainda alguns débitos que gostaria de trabalhar. Como a evolução para a utilização de um banco de dados PostgreSQL, Testes de Containers para Database, Configuração para build com GitHub Actions, melhorias na Cobertura de Testes e novos tratamento de exceções, com melhores refinamentos.
+Esta solução apresenta ainda alguns débitos que gostaria de trabalhar. Como a evolução para a utilização de um banco de dados PostgreSQL, Testes de Containers para Database, Configuração para build com GitHub Actions, melhorias na Cobertura de Testes e novos tratamento de exceções [✅], com melhores refinamentos.
 
 ## Referências:
 
