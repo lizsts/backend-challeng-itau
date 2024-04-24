@@ -5,6 +5,8 @@ import br.com.itauseguros.infrastructure.rest.dto.ProductRequest;
 import br.com.itauseguros.infrastructure.rest.dto.ProductResponse;
 import br.com.itauseguros.core.useCases.CreateProductUseCase;
 import br.com.itauseguros.core.useCases.UpdateProductUseCase;
+import jakarta.validation.Valid;
+import jdk.jfr.ContentType;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -26,7 +28,7 @@ public class ProductController {
     private final ProductDTOConverter dtoMapper;
 
     @PostMapping
-    public ResponseEntity<ProductResponse> createOrUpdateProduct(@RequestBody ProductRequest product) {
+    public ResponseEntity<ProductResponse> createOrUpdateProduct(@RequestBody @Valid ProductRequest product) {
         var newProduct = dtoMapper.toModel(product);
         if(hasProductValidator.validateHasProduct(newProduct)) {
           updateProductUseCase.execute(newProduct);
