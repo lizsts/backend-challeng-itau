@@ -34,10 +34,10 @@ public class ProductServiceGatewayImpl implements ProductServiceGateway {
 
     @Transactional
     public String updateProduct(Product updatedProduct) {
-        var persistedProduct = findProductByName(updatedProduct.getName());
+        var persistedProduct = findProductByName(updatedProduct.getName()).orElseThrow();
         persistedProduct.setBasePrice(updatedProduct.getBasePrice());
         persistedProduct.setRatedPrice(updatedProduct.getRatedPrice());
-        persistedProduct.setCategory(updatedProduct.getCategory());
+        persistedProduct.setCategory(updatedProduct.getCategory().toUpperCase());
         persistedProduct.setName(updatedProduct.getName());
         productRepository.save(persistedProduct);
         entityMapper.toModel(persistedProduct);
@@ -46,13 +46,12 @@ public class ProductServiceGatewayImpl implements ProductServiceGateway {
     }
 
     @Override
-    public ProductEntity findProductByName(String productName) {
+    public Optional<ProductEntity> findProductByName(String productName) {
         if (productName == null || productName.isBlank()) {
             throw new IllegalArgumentException("O nome do produto não pode estar vazio");
         }
 
-        Optional<ProductEntity> optionalProductEntity = productRepository.findByName(productName);
-        return optionalProductEntity.orElse(null);
+        return productRepository.findByName(productName);
     }
 
 }
