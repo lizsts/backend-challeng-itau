@@ -10,7 +10,7 @@
     </parent>
     <groupId>br.com.itauseguros</groupId>
     <artifactId>backend-challenge</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>backend-challenge-seguros</name>
     <description>Projeto Spring para Desafio Backend - Itaú Seguros</description>
     <properties>
